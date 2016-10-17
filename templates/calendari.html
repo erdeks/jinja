@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Calendari</title>
+</head>
+<style>
+table{
+	border: 3px solid white;
+	width: 100%;
+	text-align: center;
+	height: 300px;
+}
+td{
+	border: 3px solid red;
+	color: white;
+}
+h1{
+	font-family: "Lucida Console";
+	color: pink;
+	text-align: center;
+}
+
+
+</style>
+<body background="http://hdwallpaper20.com/wp-content/uploads/2016/07/black-wallpapers13-1024x576.jpg"> 
+	<h1>Calendario Jinja</h1>
+	<table>
+		 {%set i=1%}
+		 {%set j=1%}
+
+		{%for i in range (5)%}
+			<tr>
+			{%for j in range (7)%}
+				{%set l=(j+1)+(i*7)%}
+				{%if l<=31%}
+					<td>{{l}}</td>
+				{%endif%}
+			{%endfor%}
+			</tr>
+		{%endfor%}
+	</table>
+</body>
+</html>
